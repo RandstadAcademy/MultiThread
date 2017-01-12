@@ -37,6 +37,7 @@ namespace Multithreading
 
         private void cmdGetWeb_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep( 5000);
             WebClient wcGet = new WebClient();
             byte[] wcBytes = wcGet.DownloadData(this._WebAddress);
 
@@ -80,6 +81,8 @@ namespace Multithreading
 
         private void GetWebContent()
         {
+            System.Threading.Thread.Sleep(5000);
+
             _SynCtx.Send( SetLabel, "Downloading");
             WebClient wcGet = new WebClient();
             byte[] wcBytes = wcGet.DownloadData(this._WebAddress);
